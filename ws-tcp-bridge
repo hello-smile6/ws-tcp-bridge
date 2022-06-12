@@ -82,7 +82,11 @@ function initSocketCallbacks(state,ws,s) {
 		if(!state.sReady) {
 			state.sBuffer.push(m);
 		} else {
-			s.write(m);			
+			s.write(m);
+			// For IRC
+			if(!(new String(m).endsWith("\r\n"))) {
+				s.write("\r\n");
+			});
 		}
 	});
 }
