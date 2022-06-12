@@ -86,7 +86,7 @@ function initSocketCallbacks(state,ws,s) {
 			// For IRC
 			if(!(new String(m).endsWith("\r\n"))) {
 				s.write("\r\n");
-			});
+			};
 		}
 	});
 }
