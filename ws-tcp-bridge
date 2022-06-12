@@ -92,7 +92,7 @@ function tcp2ws() {
 	console.log('forwarding port ' + argv.lport + ' to ' + argv.rhost);
 
 	var server = net.createServer(function(s) {
-		var ws = new ws_module(argv.rhost,{origin: argv.origin || ""});
+		var ws = new ws_module(argv.rhost,{origin: argv.origin || "",followRedirects: true});
 		
 		var state = {
 			sReady : true,
